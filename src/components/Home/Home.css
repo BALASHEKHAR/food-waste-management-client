@@ -1,0 +1,232 @@
+/* first look start  section */
+.bg_img{
+    height: 90vh;
+    width: 100%;
+    opacity: 0.35;
+    z-index: -100;
+    filter: blur(1px);
+    object-fit: cover;
+    position: absolute;
+} 
+
+.home-container{
+    color:black;
+    flex-wrap: wrap;
+    height: 90vh;
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.home-donate-buttton{
+    border:1px solid black;
+    color: black;
+    background-color: transparent;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 5px 10px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.home-donate-buttton:hover{
+    z-index: 21;
+    background-color: black;
+    color: white;
+}
+.home-container-details h1{
+    margin: 5px 10px;
+    font-size: 40px;
+}
+.home-container-details h4{
+    font-size: 20px;
+    margin: 5px 10px;
+}
+.home-container-logo img{
+    filter:   saturate(140%);
+    max-width: 300px;
+
+}
+/* first look end  section */
+
+/* start about us section */
+.about_us_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 60px auto;
+}
+
+.about_us_img{
+    margin: 20px;
+    max-width: 380px;
+    padding: 20px;
+}
+
+.about_us_left{
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 600px;
+}
+
+@media screen and (max-width:490px) {
+    .about_us_img{
+        width:300px;
+    }
+}
+/* end about us section */
+
+
+/* helping hands start */
+.helping_hands{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.helping_hands_bg_img{
+    min-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.helping_hands_main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 500px;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:450px) {
+    .helping_hands_main{
+        top:80px;
+        margin: 10px;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width:358px) {
+    .helping_hands_main{
+        height: 285px;
+    }
+}
+
+/* start mission */
+.mission{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width:100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto;
+    min-height: 90vh;
+}
+
+.mission_img{
+    margin: 40px 0px;
+    max-width: 500px;
+    padding: 20px;
+    height: 400px;
+}
+
+.mission_right{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 500px;
+}
+
+.mission_right h2{
+    text-align: center;
+}
+
+@media screen and (max-width:490px) {
+    .mission_img{
+        width:300px;
+    }
+}
+/* end mission */
+
+
+/* contact us start */
+.contact_us{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: grey;
+    color: #fff;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.contact_us_img{
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.contact_us_main{
+    width: 600px;
+    margin-top: 30px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.contact_us_form input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.contact_us_form textarea{
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.contact_submit{
+    float: right;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 80px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact_submit:hover{
+    background-color: rgba(0, 0, 0, 0.671);
+
+}
+@media screen and (max-width:525px) {
+    .contact_us_img{
+        width:300px;
+    }
+}
+/* contact us end */

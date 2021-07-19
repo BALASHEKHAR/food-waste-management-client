@@ -1,0 +1,135 @@
+.header_main{
+    width:100%;
+    display: flex;
+    color:#fff;
+    align-items: center;
+    justify-content: space-between;
+    padding:"10px 20px";
+    background-color: blueviolet;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+
+
+.header_main h2{
+    text-decoration: none;
+    color: white;
+}
+
+.header_top{
+    display: flex;
+    align-items: center;
+}
+
+.header_middle{
+    display: flex;
+    flex-direction: row;
+}
+.profile-image{
+    object-fit: cover;
+    width: 50px;
+    padding: -10px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.header_middle a,.header_middle_open a{
+    text-decoration: none;
+    color:#fff;
+    cursor: pointer;
+    padding: 10px 10px;
+    transition: 0.5s ease;
+}
+a:hover{
+     
+    text-decoration: underline;
+}
+.logo{
+    margin-right: 10px;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.sign_in_button{
+    margin-right: 20px;
+    padding: 10px 20px;
+    color:#fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border:2px solid white;
+    border-radius: 15px;
+}
+
+.sign_in_button:hover{
+    background-color: rgb(132, 0, 255);
+}
+
+.fa-bars{
+    display: none;
+    transition: 0.3s ease;
+}
+
+.mob_sign_in_button{
+    display: block;
+    margin-right: 20px;
+    padding: 10px 20px;
+    color:#fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border:2px solid white;
+    border-radius: 5px;
+}
+
+.des_sign_in_button{
+    display: none;
+}
+
+@media screen and (max-width:600px) {
+    .sign_in_button,.header_middle{
+        display: none;
+    }
+    .fa-bars{
+        margin-right: 20px;
+        font-size: 30px;
+        display: block;
+        cursor: pointer;
+    }
+    .open{
+        transform: rotateZ(90deg);
+    }
+    .header_middle_open{
+        display: flex;
+        position: absolute;
+        background-color: blueviolet;
+        right: 0px;
+        top: 60px;
+        width:100%;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        z-index: 10;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:600px){
+    .header_middle{
+        display: flex;
+        flex-direction: row;
+    }
+    .header_middle_open{
+        display: flex;
+        flex-direction: row;
+    }
+    .mob_sign_in_button{
+        display: none;
+    }
+}

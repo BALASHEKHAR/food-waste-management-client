@@ -1,0 +1,9 @@
+export const LOAD_USER = "LOAD_USER";
+export const LOGIN_USER = "LOGIN_USER";
+export const SIGNUP_USER = "SIGNUP_USER";
+export const CREATE_POST = "CREATE_POST";
+export const DELETE_POST = "DELETE_POST";
+export const UPDATE_POST = "UPDATE_POST";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const LOAD_POSTS = "LOAD_POSTS";
+export const ERROR = "ERROR";

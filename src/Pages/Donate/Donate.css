@@ -1,0 +1,36 @@
+.place-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.place-wrapper input{
+    width: 50%;
+}
+.donate-input{
+    padding: 5px 10px;
+    border: 1px solid black;
+    font-size: 16px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    min-width: 200px;
+    max-height: 300px;
+    max-width: 100%;
+
+}
+.Donate{
+    overflow: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5%;
+}
+.donate-btn{
+    cursor: pointer;
+    background-color: #729ec2;
+    padding: 7px 10px;
+    border: none;
+    margin: 10px 0px;
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+.donate-btn:hover{
+    transform: scale(0.9);
+}
