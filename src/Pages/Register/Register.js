@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import './Register.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import {
+    Backdrop,
+    CircularProgress,
+} from '@material-ui/core';
 
 export default function Register(props) {
 
@@ -15,6 +19,7 @@ export default function Register(props) {
     const [remail, setrEmail] = useState("");
     const [rpassword, setrPassword] = useState("");
     const [rname, setrName] = useState("");
+    const [loading, setLoading] = useState(false)
 
 
 
@@ -28,16 +33,25 @@ export default function Register(props) {
     }
 
     const signInUser = async () => {
+        setLoading(true);
         const Data = {
             password,
             email
         }
-        const data = await axios.post('http://localhost:5000/api/auth/login', Data);
+        props.LoginUser(Data, () => {
+            props.LoadUser(() => {
+                setLoading(false);
+                console.log("user loaded");
+            });
+            props.LoadPosts(() => {
+                setLoading(false);
+                console.log("posts loaded")
+            });
+            history.replace('/');
+        })
 
-        localStorage.setItem("token", data.data.token)
-        props.LoadUser();
-        props.LoadPosts();
-        history.replace('/');
+
+
     }
 
     const signUpUser = async () => {
@@ -46,12 +60,15 @@ export default function Register(props) {
             email: remail,
             password: rpassword
         }
-        console.log("loading")
-        const res = await axios.post('http://localhost:5000/api/auth/register', Data);
-
-        localStorage.setItem("token", res.data.token);
-
-        history.replace('/');
+        props.signupUser(Data, () => {
+            props.LoadUser(() => {
+                console.log("user loaded");
+            });
+            props.LoadPosts(() => {
+                console.log("posts loaded")
+            });
+            history.replace('/');
+        })
     }
 
     return (
@@ -125,7 +142,11 @@ export default function Register(props) {
                         </div>
                     </div>
                     {/* ignore just for animation pupose */}
-
+                    <Backdrop
+                        style={{ zIndex: "1600" }}
+                        open={loading} >
+                        <CircularProgress color="primary" />
+                    </Backdrop>
                 </div>
             </div>
         </div>

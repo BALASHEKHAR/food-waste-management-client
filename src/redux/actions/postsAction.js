@@ -3,16 +3,18 @@ import {
     LOAD_POSTS,
     UPDATE_POST,
     DELETE_POST,
-    ERROR
+    ERROR,
+    UP_VOTE
 } from '../actionTypes';
 import axios from 'axios'
 
-export const LoadPosts = () => {
+export const LoadPosts = (onSuccess) => {
     return async (dispatch, getState) => {
         try {
             const posts = await axios.get('/api/post/allposts');
-
-            dispatch({ type: LOAD_POSTS, payload: posts.data })
+            dispatch({ type: LOAD_POSTS, payload: posts.data });
+            onSuccess();
+            console.log('loaded posts')
         } catch (err) {
             dispatch({ type: ERROR, payload: err.response })
         }
@@ -39,6 +41,16 @@ export const CreatePosts = (images, sdata, eraserData) => {
                 if (imgUrls.length === images.length) {
 
                     sdata['images'] = imgUrls;
+
+                    const fulladdress = sdata['country'] + ',' + sdata['city'] + ',' + sdata['address'];
+                    const getLatLangFromAddress = await axios.get(`https://www.mapquestapi.com/geocoding/v1/address?key=iIzTGMTjj6hWGGvsPSShyeDxyifWFnpL&location=${fulladdress}`);
+                    const latLng = getLatLangFromAddress.data.results[0].locations[0].latLng;
+                    const lat = latLng.lat.toString();
+                    const lng = latLng.lng.toString();
+
+                    sdata['lat'] = lat;
+                    sdata['lon'] = lng;
+
                     const upload = await axios.post('/api/post/addpost', sdata, {
                         headers: {
                             'authentication': localStorage.getItem('token')
@@ -138,6 +150,27 @@ export const DeletePost = (id) => {
         catch (err) {
             console.log(err.message);
         }
+
+    }
+}
+export const upVote = (postId, currentUserId) => {
+    return async (dispatch, getState) => {
+        try {
+            const vpvoted = await axios.post('/api/post/upvote', { id: postId }, {
+                headers: {
+                    'authentication': localStorage.getItem('token')
+
+                }
+            });
+            dispatch({ type: UP_VOTE, payload: { postId, currentUserId } });
+            console.log('sucess');
+
+        }
+        catch (err) {
+            console.log(err.message);
+        }
+
+
 
     }
 }

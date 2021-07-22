@@ -3,7 +3,8 @@ import {
     LOAD_POSTS,
     UPDATE_POST,
     DELETE_POST,
-    ERROR
+    ERROR,
+    UP_VOTE
 } from '../actionTypes';
 
 let initState = {
@@ -31,7 +32,7 @@ const postReducer = (state = initState, action) => {
         case UPDATE_POST:
             return {
                 ...state,
-                posts: [action.payload, ...state.posts.filter((post) => post._id != action.payload._id)],
+                posts: [action.payload, ...state.posts.filter((post) => post._id !== action.payload._id)],
                 loading: false,
                 error: null
 
@@ -50,6 +51,22 @@ const postReducer = (state = initState, action) => {
                 loading: false,
                 error: action.payload
             };
+        case UP_VOTE:
+            const rpost = state.posts.filter((post) => post._id === action.payload.postId)[0];
+
+            state.posts.splice(state.posts.indexOf(rpost, 1));
+            if (rpost.points.includes(action.payload.currentUserId)) {
+                rpost.points = rpost.points.filter((p => p != action.payload.currentUserId))
+            }
+            else {
+                rpost.points.push(action.payload.currentUserId)
+            }
+            state.posts.push(rpost)
+
+            console.log(state)
+
+            return { ...state };
+
         default:
             return state;
     }

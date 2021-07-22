@@ -77,9 +77,9 @@ function UserProfilePost(props) {
 
                 </div>
                 <div className="upost_button">
-                    <button onClick={editPost} className="ureq_now_btn">
+                    <button onClick={editPost} className="eureq_now_btn">
                         Edit</button>
-                    <button onClick={deletePost} className="ureq_now_btn">
+                    <button onClick={deletePost} className="dureq_now_btn">
                         Delete</button>
 
                 </div>

@@ -40,16 +40,21 @@
 .dashboard_location{
     flex: 1;
     text-align: center;
+    margin-left: 5px;
 }
 
 .dashboard_location button{
     border: 1px solid black;
     border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     color: black;
     transition: 0.3s ease;
     cursor: pointer;
     height: 40px;
+    margin-right: 5px;
     padding: 0px 20px;
     transition: 0.3s ease;
 }
@@ -70,4 +75,44 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+
+
+.float_donate{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.float_donate button:hover{
+    background-color:royalblue;
+    color: #fff;
+}
+.float_donate button{
+    transition: 0.2s ease;
+    margin: 15px;
+    cursor: pointer;
+    padding:5px 10px;
+    font-size: 20px;
+    background-color: rgba(180, 196, 245,0.4);
+    color:royalblue;
+    border-radius: 5px;
+    outline: none;
+    border:1px solid royalblue;
+    animation: shakeBtn 1s infinite alternate-reverse;
+}
+
+@keyframes shakeBtn {
+    0%{
+        transform: translateY(3px);
+    }
+    100%{
+        transform: translateY(-3px);
+    }
+}
+.filterIcon{
+    width: 20px;
+    cursor: pointer;
+    height: 20px;
+    margin-right: 10px;
 }

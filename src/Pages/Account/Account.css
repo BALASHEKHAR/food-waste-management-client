@@ -1,5 +1,5 @@
 .account_main{
-    max-width: 700px;
+    width: 100%;
     margin: auto;
 }
 
@@ -8,17 +8,6 @@
     margin: 30px 10px;
 }
 
-.account_wrapper{
-    display: flex;
-    flex-direction: row;
-}
-
-.account_profile_img{
-    width: 100px;
-    object-fit: contain;
-    border-radius: 50%;
-    margin-right: 20px;
-}
 .my-posts{
    
     width: 100%;
@@ -27,3 +16,47 @@
 
 }
 
+.account_wrapper{
+    width:100%;
+    text-align: center;
+}
+
+.accout_wrapper_left{
+    padding:20px;
+    width: 100%;
+    background-color:blueviolet;
+    height: 140px;
+}
+
+.accout_wrapper_left h2{
+    color: white;
+}
+
+.account_profile_img{
+    max-height: 130px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin: auto;
+    border: 3px solid white;
+}
+
+.accout_wrapper_right{
+    margin-top: 50px;
+}
+.upvotes{
+    font-weight: 800;
+    font-size: 22px;
+    padding: 5px;
+    
+    color: blueviolet;
+}
+.edit-icon{
+    cursor: pointer;
+    color: blueviolet;
+    margin-left: 10px;
+    border: 1px solid blueviolet;
+    border-radius: 50%;
+    padding: 3px;
+    vertical-align: middle;
+    background-color: rgb(220, 194, 245);
+}

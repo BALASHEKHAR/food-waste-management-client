@@ -8,31 +8,59 @@
     width: 90%;
     bottom: 10px;
 }
-.ureq_now_btn{
-    border: 1px solid black;
+
+.eureq_now_btn{
+    border: 1px solid green;
     padding: 07px 30px;
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background:  #809fff;
+	background:  rgba(185, 241, 195, 0.4);
 	border-radius: 5px;  
 	cursor: pointer;
 	outline: none;
    
 
-	color: #eee;
+	color: green;
 	transition: transform 0.3s;
 	margin: 5px 5px;
 	font-size: 16px;
 }
-.ureq_now_btn:hover{
+
+.eureq_now_btn:hover{
     transform: translateY(-6px);
-	background: #1a66ff;
+	background: green;
+    color: white;
 }
+
+.dureq_now_btn{
+    border: 1px solid red;
+    padding: 07px 30px;
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background:  rgba(243, 198, 198, 0.3);
+	border-radius: 5px;  
+	cursor: pointer;
+	outline: none;
+   
+
+	color: red;
+	transition: transform 0.3s;
+	margin: 5px 5px;
+	font-size: 16px;
+}
+
+.dureq_now_btn:hover{
+    transform: translateY(-6px);
+	background: red;
+    color:white;
+}
+
 .uposted_by_user{
     display: flex;
     cursor: pointer;
     align-items: center;
 }
+
 .uposted_by_user img{
     width: 40px;
     height: 40px;

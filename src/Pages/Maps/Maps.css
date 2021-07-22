@@ -1,0 +1,129 @@
+.map{
+    width: 100vw;
+}
+.mapuser{
+    display: flex;
+    align-items: center;
+}
+.maptimeago{
+    float: right;
+    opacity: 0.7;
+    font-size: 10px;
+}
+.mapuser img{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.mapuser p{
+    font-size: 14px;
+}
+.maplist{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.maplist li{
+    font-size: 14px;
+    
+    padding-left: 0px;
+}
+
+.map_search{
+    border: 1px solid black;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 37.5%;
+    height: 35px;
+    outline: none;
+    width: 50%;
+    margin: 0px auto;
+    font-size: 18px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5px;
+}
+.map-food-item{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.map-dir-btn{
+    border: 1px solid green;
+    padding:0px 4px;
+	background:  rgba(185, 241, 195, 0.4);
+	border-radius: 5px;  
+	cursor: pointer;
+    color: green;
+	outline: none;
+	margin: 5px 3px;
+	font-size: 14px;
+}
+.map-dir-btn a{
+    color: green;
+}
+.map-dir-btn:hover{
+	background: green;
+}
+.map-dir-btn:hover.map-dir-btn a{
+    color: #fff;
+}
+
+.map-dir-btn:active{
+    transform: scale(0.95);
+}
+.map-loc-btn{
+    border: 1px solid red;
+    padding:0px 4px;
+	background:  rgba(243, 198, 198, 0.3);
+	border-radius: 5px;  
+	cursor: pointer;
+	outline: none;
+	color: red;
+	margin: 5px 3px;
+	font-size: 14px;
+}
+.map-loc-btn:hover{
+	background: red;
+    color: #fff;
+}
+
+.map-loc-btn:active{
+    transform: scale(0.95);
+}
+.map-food-item a {
+    text-decoration: none;
+    color: #000;
+}
+
+.map-food-item:hover{
+    transform: scale(1.02);
+}
+.map-food-items{
+    background-color: rgb(233, 248, 209);
+    height: 100vh;
+    overflow: auto;
+    width: 25%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+.reactMapGl{
+    width: 75%;
+    float: right;
+}
+@media screen and (max-width:750px) {
+    .map-food-items,.map_search{
+        display: none;
+    }
+    .reactMapGl{
+        width: 100%;
+    }
+}

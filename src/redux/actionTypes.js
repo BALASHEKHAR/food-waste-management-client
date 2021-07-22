@@ -7,3 +7,5 @@ export const UPDATE_POST = "UPDATE_POST";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const LOAD_POSTS = "LOAD_POSTS";
 export const ERROR = "ERROR";
+export const UP_VOTE = "UP_VOTE";
+export const UPDATE_USER = "UPDATE_USER";

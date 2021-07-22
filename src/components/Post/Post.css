@@ -1,30 +1,38 @@
 .post-container{
     margin:20px auto;
-    height: 450px;
-    
     border-radius: 5px;
-    box-shadow: 0 15px 30px 1px grey;
+    display: flex;
+    height: 440px;
+    width: 75vw;
+        box-shadow: 0 15px 30px 1px grey;
 }
+
 .post-container-img{
-    width: 50%;
-    float: right;
+    flex: 1;
     height: 100%;
-    max-width: 500px;
     overflow: hidden;
+
+}
+.post-container-img-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 .post-container-details{
     position: relative;
     overflow: auto;
-    width: 50%;
+    flex: 1;
     height: 100%;
-    max-width: 500px;
-    float: left;
     padding: 10px;
     padding-left: 20px;
     
 }
-.post-container-img img{
-    
+.posted_by_user{
+    margin-top: 5px;
+}
+.ImageGallery{
+    display: flex;    
+    overflow: hidden;
     width: 100%;
     height: 100%;
     object-fit: cover; 
@@ -32,29 +40,91 @@
 .post_button{
     flex-wrap: wrap;
     display: flex;
-    width: 90%;
-    position: absolute;
-    bottom: 10px;
+    width: 100%;
+    margin-top: 10px;
     justify-content: center;
 }
-.req_now_btn{
-    flex: 1;
-    border: 1px solid black;
+.req_now_btn a,.map_req_now_btn a,.di_req_now_btn a{
+    text-decoration: none;
     
+}
+.req_now_btn{
+    padding: 5px 3px;
+    border: 1px solid rgb(255, 187, 0);
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background:  #809fff;
+	background-color: rgb(255, 187, 0, 0.2);
+	border-radius: 3px;  
+	cursor: pointer;
+	outline: none;
+	color:rgb(255, 153, 0);
+	transition: transform 0.3s;
+	margin: 5px 0px;
+	font-size: 16px;
+    font-weight: 900;
+}
+
+.map_req_now_btn{
+    flex: 1;
+    border: 1px solid rgb(111, 0, 255);
+    min-width: 100px;
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background-color:rgba(224, 184, 243, 0.4);
 	border-radius: 5px;  
 	cursor: pointer;
 	outline: none;
-	color: #eee;
+	color: rgb(111, 0, 255);
 	transition: transform 0.3s;
 	margin: 5px 5px;
 	font-size: 16px;
 }
+
+.di_req_now_btn{
+    flex: 1;
+    border: 1px solid rgb(255, 0, 81);
+    min-width: 100px;
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background:  rgba(240, 172, 193, 0.4);
+	border-radius: 5px;  
+	cursor: pointer;
+	outline: none;
+	color: rgb(255, 0, 81);
+	transition: transform 0.3s;
+	margin: 5px 5px;
+	font-size: 16px;
+}
+ 
+.di_req_now_btn a{
+    color: rgb(255, 0, 81);
+}
+
 .req_now_btn:hover{
     transform: translateY(-6px);
-	background: #1a66ff;
+	background: rgb(255, 187, 0);
+    color: white;
+}
+
+.d:hover{
+    transform: translateY(6px);
+	background: rgb(255, 187, 0);
+    color: white;
+}
+
+.map_req_now_btn:hover{
+    transform: translateY(-6px);
+	background-color:rgb(111, 0, 255) ;
+color:white;
+}
+
+.di_req_now_btn:hover {
+    transform: translateY(-6px);
+	background-color:rgb(255, 0, 81);
+color:white;
+}
+.di_req_now_btn:hover.di_req_now_btn a{
+     color:white;
 }
 .posted_by_user{
     display: flex;
@@ -88,4 +158,74 @@
     float: right;
     font-size: 12px;
 
+}
+
+@media screen and (max-width:905px) {
+    .post-container{
+        width: 95%;
+    }
+}
+@media screen and (max-width:640px) {
+    .post-container-img{
+      display: none;
+    }
+    .post-container{
+        height: auto;
+    }
+   
+    .post-container-details{
+        padding: 4px;
+    }
+}
+
+.upost_button{
+    flex-wrap: wrap;
+    width: 90%;
+    bottom: 10px;
+}
+
+.eureq_now_btn{
+    border: 1px solid green;
+    padding: 07px 30px;
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background:  rgba(185, 241, 195, 0.4);
+	border-radius: 5px;  
+	cursor: pointer;
+	outline: none;
+   
+
+	color: green;
+	transition: transform 0.3s;
+	margin: 5px 5px;
+	font-size: 16px;
+}
+
+.eureq_now_btn:hover{
+    transform: translateY(-6px);
+	background: green;
+    color: white;
+}
+
+.dureq_now_btn{
+    border: 1px solid red;
+    padding: 07px 30px;
+	transform: translateY(0px);
+	transition: 0.3s linear;
+	background:  rgba(243, 198, 198, 0.3);
+	border-radius: 5px;  
+	cursor: pointer;
+	outline: none;
+   
+
+	color: red;
+	transition: transform 0.3s;
+	margin: 5px 5px;
+	font-size: 16px;
+}
+
+.dureq_now_btn:hover{
+    transform: translateY(-6px);
+	background: red;
+    color:white;
 }

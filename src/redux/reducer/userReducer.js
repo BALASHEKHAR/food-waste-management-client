@@ -3,7 +3,9 @@ import {
     LOGIN_USER,
     SIGNUP_USER,
     LOGOUT_USER,
-    ERROR
+    ERROR,
+    UP_VOTE,
+    UPDATE_USER
 } from '../actionTypes';
 
 let intiState = {
@@ -38,6 +40,21 @@ const userReducer = (state = intiState, action) => {
                 user: null,
                 loading: false
             };
+        case UPDATE_USER:
+            state.user = action.payload;
+            return {
+                ...state
+            }
+        // case UP_VOTE:
+        //     if (state.user.points.includes(action.payload)) {
+        //         state.user.points = state.user.points.filter(userid => userid !== action.payload);
+        //     }
+        //     else {
+        //         state.user.points.push(action.payload);
+        //     }
+        //     return {
+        //         ...state,
+        //     }
         case ERROR:
             return {
                 ...state,
