@@ -6,6 +6,7 @@
     "@material-ui/core": "^4.12.0",
     "@material-ui/icons": "^4.11.2",
     "@reach/combobox": "^0.15.3",
+    "@react-google-maps/api": "^2.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -24,6 +25,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "timeago.js": "^4.0.2",
+    "use-places-autocomplete": "^1.9.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -42,16 +44,12 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not ie 11",
-      "not chrome < 51",
-      "not safari < 10"
+      "not op_mini all"
     ],
     "development": [
-      ">0.2%",
-      "not dead",
-      "not ie 11",
-      "not chrome < 51",
-      "not safari < 10"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
