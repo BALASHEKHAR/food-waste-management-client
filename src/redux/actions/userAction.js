@@ -12,7 +12,7 @@ import axios from 'axios';
 export const LoginUser = (data, onSuccess) => {
     return async (dispatch, getState) => {
         try {
-            const user = await axios.post('/api/auth/login', data);
+            const user = await axios.post('https://food-waste-management.herokuapp.com/api/auth/login', data);
             dispatch({ type: LOGIN_USER, payload: user.data });
             localStorage.setItem("token", user.data.token);
             onSuccess();
@@ -26,7 +26,7 @@ export const LoginUser = (data, onSuccess) => {
 export const signupUser = (data, onSuccess) => {
     return async (dispatch, getState) => {
         try {
-            const user = await axios.post('/api/auth/register', data);
+            const user = await axios.post('https://food-waste-management.herokuapp.com/api/auth/register', data);
             dispatch({ type: SIGNUP_USER, payload: user.data });
             localStorage.setItem("token", user.data.token);
             onSuccess();
@@ -45,7 +45,7 @@ export const LoadUser = (onSuccess) => {
                 dispatch({ type: ERROR, payload: "token not found" });
                 return;
             }
-            const user = await axios.get('/api/auth/getuser', {
+            const user = await axios.get('https://food-waste-management.herokuapp.com/api/auth/getuser', {
                 headers: {
                     "authentication": token
                 }
@@ -71,7 +71,7 @@ export const updateProfile = (data, onSuccess) => {
     return async (dispatch, getstate) => {
         try {
             const token = localStorage.getItem("token");
-            const updatedUser = await axios.put('/api/auth/update_user', data, {
+            const updatedUser = await axios.put('https://food-waste-management.herokuapp.com/api/auth/update_user', data, {
                 headers: {
                     "authentication": token
                 }

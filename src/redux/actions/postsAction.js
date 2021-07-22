@@ -11,7 +11,7 @@ import axios from 'axios'
 export const LoadPosts = (onSuccess) => {
     return async (dispatch, getState) => {
         try {
-            const posts = await axios.get('/api/post/allposts');
+            const posts = await axios.get('https://food-waste-management.herokuapp.com/api/post/allposts');
             dispatch({ type: LOAD_POSTS, payload: posts.data });
             onSuccess();
             console.log('loaded posts')
@@ -51,7 +51,7 @@ export const CreatePosts = (images, sdata, eraserData) => {
                     sdata['lat'] = lat;
                     sdata['lon'] = lng;
 
-                    const upload = await axios.post('/api/post/addpost', sdata, {
+                    const upload = await axios.post('https://food-waste-management.herokuapp.com/api/post/addpost', sdata, {
                         headers: {
                             'authentication': localStorage.getItem('token')
                         }
@@ -104,7 +104,7 @@ export const UpdatePost = (id, pi, images, sdata, eraserData) => {
                 if (imgUrls.length === images.length) {
                     console.log(imgUrls)
                     sdata['images'] = imgUrls;
-                    const upload = await axios.put(`/api/post/${id}`, sdata, {
+                    const upload = await axios.put(`https://food-waste-management.herokuapp.com/api/post/${id}`, sdata, {
                         headers: {
                             'authentication': localStorage.getItem('token')
                         }
@@ -135,7 +135,7 @@ export const DeletePost = (id) => {
         try {
 
             console.log(id)
-            const status = await axios.delete(`/api/post/${id}`, {
+            const status = await axios.delete(`https://food-waste-management.herokuapp.com/api/post/${id}`, {
                 headers: {
                     'authentication': localStorage.getItem('token')
 
@@ -156,7 +156,7 @@ export const DeletePost = (id) => {
 export const upVote = (postId, currentUserId) => {
     return async (dispatch, getState) => {
         try {
-            const vpvoted = await axios.post('/api/post/upvote', { id: postId }, {
+            const vpvoted = await axios.post('https://food-waste-management.herokuapp.com/api/post/upvote', { id: postId }, {
                 headers: {
                     'authentication': localStorage.getItem('token')
 
