@@ -11,7 +11,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { MAPKEY } from '../../sceret/secure';
 import './Maps.css';
 
 
@@ -128,7 +127,7 @@ export default function Maps(props) {
                 <ReactMapGL
                     {...viewport}
                     mapStyle="mapbox://styles/mapbox/streets-v11"
-                    mapboxApiAccessToken={MAPKEY}
+                    mapboxApiAccessToken="pk.eyJ1Ijoia2FtYW5kbGFiYWxhc2hla2hhciIsImEiOiJja3JiZXJ0MWg0YjdpMndueHlzOHFmMmJhIn0.GK_kdlg4xXcqcdSF8gmDow"
                     onViewportChange={nextViewport => setViewport(nextViewport)}
                     transitionDuration="400"
 

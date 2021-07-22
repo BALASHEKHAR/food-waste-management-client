@@ -12,7 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Axios from 'axios';
 import meWink from '../../Media/meWink.png';
-import { PASSWORD, EMIALTO, EMIALFROM } from '../../sceret/secure';
 
 
 
@@ -60,9 +59,9 @@ function Home(props) {
 
         Axios.post("http://localhost:5000/api/post/mail",
             {
-                frommail: EMIALFROM,
-                password: PASSWORD,
-                tomail: EMIALTO,
+                frommail: "protfoliobala@gmail.com",
+                password: "Protfolio@99",
+                tomail: "kamandlabalashekhar@gmail.com",
                 Subject: `<h1>${first_name} </h1> send you a message`,
                 Body: `Name : <h2>${first_name} </h2> <br/> Email : <h2>${full_name}</h2> <br/> description : <h2>${desc}</h2>`,
             })
@@ -243,7 +242,7 @@ function Home(props) {
             />
             <div ref={snackRef} className="snackbar" id="move">
                 <img src={meWink} alt="" />
-                <div>Hey! Ive got your message.<br />I'll get back to you ASAP.</div>
+                <div>Hey! We got your message.<br />We will get back to you ASAP.</div>
             </div>
         </div >
     )
