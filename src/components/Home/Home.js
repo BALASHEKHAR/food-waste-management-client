@@ -57,7 +57,7 @@ function Home(props) {
 
         btnRef.current.innerHTML = "Sending..."
 
-        Axios.post("http://localhost:5000/api/post/mail",
+        Axios.post("/api/post/mail",
             {
                 frommail: "protfoliobala@gmail.com",
                 password: "Protfolio@99",
