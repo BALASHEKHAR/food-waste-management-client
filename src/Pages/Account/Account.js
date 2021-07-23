@@ -49,7 +49,6 @@ function Account(props) {
 
     const updateProfile = () => {
         if (imgChange) {
-            console.log("img")
             if (name.length < 2) {
                 setNameError("enter Name");
                 return

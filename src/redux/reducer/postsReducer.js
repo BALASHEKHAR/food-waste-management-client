@@ -63,8 +63,6 @@ const postReducer = (state = initState, action) => {
             }
             state.posts.push(rpost)
 
-            console.log(state)
-
             return { ...state };
 
         default:

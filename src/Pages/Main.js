@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header/Header';
 import Home from '../components/Home/Home';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import Register from './Register/Register';
 import Dashboard from './Dashboard/Dashboard';
 import Account from './Account/Account';
@@ -34,7 +34,7 @@ function Main(props) {
     return (
 
         <div>
-            <BrowserRouter>
+            <HashRouter>
                 <Switch>
 
                     <Route path="/" exact>
@@ -90,7 +90,7 @@ function Main(props) {
                     open={loading} >
                     <CircularProgress color="primary" />
                 </Backdrop>
-            </BrowserRouter>
+            </HashRouter>
 
         </div>
 

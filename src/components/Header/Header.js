@@ -71,9 +71,7 @@ function Header(props) {
                         <p>Account</p>
                     </a>
                 }
-                <a href='/#about_us'>
-                    <p>About</p>
-                </a>
+
                 <a onClick={openMap}>
                     <p>Maps</p>
                 </a>

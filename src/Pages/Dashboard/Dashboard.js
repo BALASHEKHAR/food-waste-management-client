@@ -72,7 +72,7 @@ function Dashboard(props) {
         setfilter(fil);
         handleClose(e);
     }
-    //console.log(props)
+
 
     return (
         <div>
@@ -122,7 +122,7 @@ function Dashboard(props) {
                                         if (filter === "Food") {
                                             const allitems = [];
                                             post.fooditems.map((item) => allitems.push(item.item_name));
-                                            // console.log(allitems)
+
                                             return allitems.toString().includes(inputval);
                                         }
                                         else if (filter === "Country") {

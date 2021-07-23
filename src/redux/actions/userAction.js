@@ -52,7 +52,6 @@ export const LoadUser = (onSuccess) => {
             });
             dispatch({ type: LOAD_USER, payload: user.data });
             onSuccess();
-            console.log('loaded user')
         } catch (err) {
             console.log(err)
             dispatch({ type: ERROR, payload: err.response })
@@ -77,31 +76,9 @@ export const updateProfile = (data, onSuccess) => {
                 }
             });
             onSuccess();
-            console.log(updatedUser.data)
-            console.log(updatedUser.data.image);
             dispatch({ type: UPDATE_USER, payload: updatedUser.data })
         } catch (err) {
             console.log(err.response.data);
         }
     }
 }
-
-
-// export const upVote = (currentUserId, userID) => {
-//     return async (dispatch, getState) => {
-//         try {
-//             let token = localStorage.getItem("token");
-//             const user = await axios.post('/api/auth/upvote', { userID }, {
-//                 headers: {
-//                     "authentication": token
-//                 }
-//             });
-//             console.log(user);
-//             if (currentUserId === userID) {
-//                 dispatch({ type: UP_VOTE, payload: user.data._id })
-//             }
-//         } catch (e) {
-//             console.log(e.response.data);
-//         }
-//     }
-// }

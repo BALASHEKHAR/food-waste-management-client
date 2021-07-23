@@ -14,7 +14,6 @@ export const LoadPosts = (onSuccess) => {
             const posts = await axios.get('https://food-waste-management.herokuapp.com/api/post/allposts');
             dispatch({ type: LOAD_POSTS, payload: posts.data });
             onSuccess();
-            console.log('loaded posts')
         } catch (err) {
             dispatch({ type: ERROR, payload: err.response })
         }
@@ -57,7 +56,6 @@ export const CreatePosts = (images, sdata, eraserData) => {
                         }
                     });
 
-                    console.log(upload.data)
                     dispatch({ type: CREATE_POST, payload: upload.data })
 
                     eraserData();
@@ -102,7 +100,6 @@ export const UpdatePost = (id, pi, images, sdata, eraserData) => {
 
                 }
                 if (imgUrls.length === images.length) {
-                    console.log(imgUrls)
                     sdata['images'] = imgUrls;
                     const upload = await axios.put(`https://food-waste-management.herokuapp.com/api/post/${id}`, sdata, {
                         headers: {
@@ -110,7 +107,6 @@ export const UpdatePost = (id, pi, images, sdata, eraserData) => {
                         }
                     });
 
-                    console.log(upload.data)
                     dispatch({ type: UPDATE_POST, payload: upload.data })
 
                     eraserData();
@@ -133,15 +129,12 @@ export const DeletePost = (id) => {
     return async (dispatch, getState) => {
 
         try {
-
-            console.log(id)
             const status = await axios.delete(`https://food-waste-management.herokuapp.com/api/post/${id}`, {
                 headers: {
                     'authentication': localStorage.getItem('token')
 
                 }
             });
-            console.log(status.data)
             dispatch({
                 type: DELETE_POST,
                 payload: status.data
@@ -163,7 +156,6 @@ export const upVote = (postId, currentUserId) => {
                 }
             });
             dispatch({ type: UP_VOTE, payload: { postId, currentUserId } });
-            console.log('sucess');
 
         }
         catch (err) {
