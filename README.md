@@ -1,7 +1,7 @@
 # FOOD WASTE MANAGEMENT
    
 ### Demo
-- [Youtube Demo](https://www.youtube.com/watch?v=ARmQtoyqwvs)
+- [Youtube Demo](https://youtu.be/Cv4XsSxXOpA)
 
 ### Project Problem Statement:
 Every restaurant has perfectly good food that they cannot sell at the end of their day. 
