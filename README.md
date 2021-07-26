@@ -1,5 +1,8 @@
 # FOOD WASTE MANAGEMENT
-   
+
+### Hosted on Netlify
+-[live url](https://food-waste-managements.netlify.app/)
+
 ### Demo
 - [Youtube Demo](https://youtu.be/Cv4XsSxXOpA)
 
@@ -40,6 +43,5 @@ Tech Stack used:
 9. Redux, (React-Redux)
 10. React-swipeable-views
 
-# Hosted on Netlify
-have a look [live url](https://food-waste-managements.netlify.app/)
+
 
