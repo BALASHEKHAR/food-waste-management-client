@@ -3,9 +3,6 @@
 ### Hosted on Netlify
 -[live url](https://food-waste-managements.netlify.app/)
 
-### Demo
-- [Youtube Demo](https://youtu.be/Cv4XsSxXOpA)
-
 ### Project Problem Statement:
 Every restaurant has perfectly good food that they cannot sell at the end of their day. 
 Large amount of these food goes wasted and is thrown away in the dumping zone. 
