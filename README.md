@@ -1,7 +1,7 @@
 # FOOD WASTE MANAGEMENT
 
 ### Hosted on Netlify
--[live url](https://food-waste-managements.netlify.app/)
+-[live url](https://food-waste-management-system.netlify.app/)
 
 ### Project Problem Statement:
 Every restaurant has perfectly good food that they cannot sell at the end of their day. 
